@@ -8,11 +8,13 @@ public class Mountain {
     private long id;
     private String name;
     private double height;
+    private String coordinates;
 
-    public Mountain(long id, String name, double height) {
+    public Mountain(long id, String name, double height, String coordinates) {
         this.id = id;
         this.name = name;
         this.height = height;
+        this.coordinates = coordinates;
     }
 
     public Mountain() {
@@ -42,12 +44,22 @@ public class Mountain {
         return height;
     }
 
+
+    public String getCoordinates() {
+        return coordinates;
+    }
+
+    public void setCoordinates(String coordinates) {
+        this.coordinates = coordinates;
+    }
+
     @Override
     public String toString() {
         return "Mountain{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", height=" + height +
+                ", coordinates='" + coordinates + '\'' +
                 '}';
     }
 }
