@@ -3,7 +3,7 @@ package be.intecbrussel.model;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Mountain {
+public class Mountain implements Comparable<Mountain>{
 
     private long id;
     private String name;
@@ -61,5 +61,10 @@ public class Mountain {
                 ", height=" + height +
                 ", coordinates='" + coordinates + '\'' +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Mountain mountain) {
+        return (int) (mountain.getHeight() - this.getHeight());
     }
 }
